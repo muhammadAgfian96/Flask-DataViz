@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body1 %}
+<h1>Data Visualization</h1>
+{% endblock body1 %}
+
+{% block body2 %}
+<div class="row">
+    <div class="col-md-6">
+        <h3>Distribusi Data MPG</h3>
+        <div class="chart" id="satu">
+            <!-- ini plot 1 -->
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <h3>Distribusi Data HorsePower</h3>
+        <div class="chart" id="dua">
+            <!-- ini plot 2 -->
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    Plotly.plot('satu', {{data[0] | safe}}, {});
+    Plotly.plot('dua', {{data[1] | safe}}, {});
+
+</script>
+{% endblock body2 %}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body1 %}
+
+{% endblock body1 %}
+
+{% block body2 %}
+<h3 class="font-warna" style="display: inline">Ini Page Table Data</h3>
+        <table class="table mb-5 mt-3 table-striped">
+            <thead>
+                <tr>
+                    {% for item in data.columns %}
+                    <th scope="row">{{ item }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for index,item in data.iterrows() %}
+                <tr>
+                    {% for col in item %}
+                    <td>{{ col }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock body2 %}
